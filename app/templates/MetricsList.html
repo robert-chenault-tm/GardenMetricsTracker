@@ -1,0 +1,13 @@
+<div>
+	<h1 ng-show="noMetrics">No weeks to display</h1>
+	<ul>
+		<li ng-repeat="week in weeks | orderBy: 'weekStart'">
+			<a ng-href="/plant/{{plantID}}/metric/{{week._id}}" tabindex="-1">{{generateTitle(week)}}</a>
+		</li>
+	</ul>
+	<input type="date" ng-model="newDate"></input>
+	<button class="btn btn-default" ng-click="addWeek()">Add</button>
+	<br />
+	<button class="btn btn-default" ng-click="addCurrentWeek()">Add current week</button>
+	<button class="btn btn-default" ng-click="toPlant()">Back</button>
+</div>

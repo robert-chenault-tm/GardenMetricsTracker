@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" ng-app="gardenApp">
+<head>
+	<base href="/" />
+	<meta charset="utf-8">
+	<title>Garden Metrics Tracker</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+</head>
+<body ng-cloak>
+	<a ng-href="/" tabindex="-1"><h1>Garden Metrics Tracker</h1></a>
+	<br />
+	<ng-view></ng-view>
+	
+	<script src="/lib/jquery-3.1.1.min.js"></script>
+	<script src="/lib/underscore-min.js"></script>
+	<script src="/lib/bootstrap.min.js"></script>
+	<script src="/lib/moment.js"></script>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/angular/angular-resource.min.js"></script>
+	<script src="/lib/angular/angular-route.min.js"></script>
+	<script src="/lib/Chart.min.js"></script>
+	<script src="/js/app.js"></script>
+	
+	<!-- Controllers -->
+	<script src="/js/controllers/HomeController.js"></script>
+	<script src="/js/controllers/HistoryController.js"></script>
+	<script src="/js/controllers/PlantListController.js"></script>
+	<script src="/js/controllers/PlantController.js"></script>
+	<script src="/js/controllers/PlantTypeListController.js"></script>
+	<script src="/js/controllers/PlantTypeController.js"></script>
+	<script src="/js/controllers/YearlyTemperatureListController.js"></script>
+	<script src="/js/controllers/YearlyTemperatureController.js"></script>
+	<script src="/js/controllers/MetricsListController.js"></script>
+	<script src="/js/controllers/MetricController.js"></script>
+	<script src="/js/controllers/WeeklyTemperatureListController.js"></script>
+	<script src="/js/controllers/WeeklyTemperatureController.js"></script>
+	<script src="/js/controllers/WeatherController.js"></script>
+	
+	<!-- Services -->
+	<script src="/js/services/PlantData.js"></script>
+	<script src="/js/services/PlantTypeData.js"></script>
+	<script src="/js/services/TemperatureData.js"></script>
+	<script src="/js/services/MetricData.js"></script>
+	
+
+
+</body>
+</html>

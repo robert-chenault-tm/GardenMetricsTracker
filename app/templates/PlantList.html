@@ -1,0 +1,10 @@
+<div>
+	<h1 ng-show="noPlants">No plants to display</h1>
+	<ul>
+		<li ng-repeat="plant in plants | orderBy: 'localID'">
+			<a ng-href="/plant/{{plant._id}}" tabindex="-1">{{plant.localID}}({{plant.plantName}})</a>
+		</li>
+	</ul>
+	<button class="btn btn-default" ng-click="addPlant()">New</button>
+	<button class="btn btn-default" ng-click="toHome()">Back</button>
+</div>

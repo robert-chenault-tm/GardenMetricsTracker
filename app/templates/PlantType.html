@@ -1,0 +1,28 @@
+<div>
+	<h1>{{plantType.name}}</h1>
+	<br />
+	<form name="plantTypeForm">
+		<fieldset>
+			<label for="name">Name: </label>
+			<input id="name" type="text" required ng-model="plantType.name" placeholder="Name..."></input>
+			<br />
+			<label for="defaultMeasurement">Plant Yield Measurement: </label>
+			<input id="defaultMeasurement" type="text" required ng-model="plantType.defaultMeasurement" placeholder="Measurement..."></input>
+			<br />
+			<label for="defaultRootRadius">Default Approximate Rootspan Radius in Inches: </label>
+			<input id="defaultRootRadius" type="text" required ng-model="plantType.defaultInchRootRadius" placeholder="Inches..."></input>
+			<br />
+			<label>Plant breeds:</label>
+			<button type="button" ng-click="newBreed()">+</button>
+			<div ng-repeat="breed in plantType.plantBreeds">
+				<input type="text" ng-model="breed.val" placeholder="Breed..."></input>
+				<button type="button" ng-click="removeBreed(this)">X</button>
+			</div>
+			
+		</fieldset>
+	</form>
+	
+	<button class="btn btn-default" ng-click="savePlantType(plantType, plantTypeForm)">Save</button>
+	<button class="btn btn-default" ng-click="backToList()">Cancel</button>
+	<button class="btn btn-default" ng-click="deletePlantType(plantType)" ng-show="removable">Delete</button>
+</div>

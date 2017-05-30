@@ -1,0 +1,37 @@
+<div>
+	<h1>{{title}}</h1>
+	<br />
+	<form name="weekForm">
+		<fieldset>
+			<label for="curWater">Current Water: </label>
+			<input id="curWater" type="number" required ng-model="week.curWater.amount" placeholder="Current Water..."></input>
+			<select ng-options="measurement.name as measurement.name for measurement in measurements" ng-model="week.curWater.measurement"></select>
+			<br />
+			<label for="desiredWater">Desired Water: </label>
+			<input id="desiredWater" type="number" required ng-model="week.desiredWater.amount" placeholder="Desired Water..."></input>
+			<select ng-options="measurement.name as measurement.name for measurement in measurements" ng-model="week.desiredWater.measurement"></select>
+			<br />
+			<label for="yieldAmount">Yield: </label>
+			<input id="yieldAmount" type="number" required ng-model="week.yieldAmount" placeholder="Yield Amount..."></input>
+			<label>{{plantType.defaultMeasurement}}</label>
+			<br />
+			<label>Pest Information</label>
+			<button type="button" class="btn btn-default" ng-click="addPest()" tabindex="-1">+</button>
+			<div ng-repeat="pest in week.pestDamage">
+				<label>
+					Pest Name:
+					<input type="text" ng-model="pest.source"></input>
+				</label>
+				<label>
+					Damage Severity:
+					<select ng-options="item.val as item.description for item in damageValues" ng-model="pest.degree"></select>
+				</label>
+				<button type="button" class="btn btn-default" ng-click="removePest(this)" tabindex="-1">X</button>
+			</div>
+		</fieldset>
+	</form>
+	
+	<button class="btn btn-default" ng-click="saveWeek(week, weekForm)" tabindex="-1">Save</button>
+	<button class="btn btn-default" ng-click="backToList()" tabindex="-1">Cancel</button>
+	<button class="btn btn-default" ng-click="deleteWeek(week)" ng-show="removable" tabindex="-1">Delete</button>
+</div>

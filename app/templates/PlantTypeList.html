@@ -1,0 +1,10 @@
+<div>
+	<h1 ng-show="noPlants">No plant types to display</h1>
+	<ul>
+		<li ng-repeat="type in plantTypes | orderBy: 'name'">
+			<a ng-href="/plantType/{{type._id}}" tabindex="-1">{{type.name}}</a>
+		</li>
+	</ul>
+	<button class="btn btn-default" ng-click="toHome()">Back</button>
+	<button class="btn btn-default" ng-click="addPlantType()">New</button>
+</div>

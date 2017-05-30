@@ -1,0 +1,31 @@
+<div>
+	<h1>{{plant.localID}}</h1>
+	<br />
+	<form name="plantForm">
+		<fieldset>
+			<label for="name">Name: </label>
+			<input id="name" type="text" required ng-model="plant.localID" placeholder="Name..."></input>
+			<br />
+			<label for="plantType">Plant Type:</label>
+			<select ng-options="type as type for type in plantTypeNames" ng-model="plant.plantName" ng-change="updateCurrentType()"></select>
+			<button class="btn btn-default" type="button" ng-click="applyDefaults()">Apply defaults</button>
+			<br />
+			<label for="breed">Plant Breed: </label>
+			<select ng-options="breed.val as breed.val for breed in currentType.plantBreeds" ng-model="plant.plantBreed"></select>
+			<br />
+			<label for="location">Location: </label>
+			<input id="location" type="text" required ng-model="plant.location" placeholder="Location..."></input>
+			<br />
+			<label for="rootRadius">Approximate Rootspan Radius in Inches: </label>
+			<input id="rootRadius" type="text" required ng-model="plant.inchRootRadius" placeholder="Inches..."></input>
+			<br />
+			<label for="plantDate">Date Planted: </label>
+			<input id="plantDate" type="date" required ng-model="plant.plantDate" placeholder="Date..."></input>
+		</fieldset>
+	</form>
+	
+	<button class="btn btn-default" ng-click="savePlant(plant, plantForm)">Save</button>
+	<button class="btn btn-default" ng-click="openWeeklyMetricsList()" ng-show="removable">Weekly Metrics</button>
+	<button class="btn btn-default" ng-click="backToList()">Cancel</button>
+	<button class="btn btn-default" ng-click="deletePlant(plant)" ng-show="removable">Delete</button>
+</div>

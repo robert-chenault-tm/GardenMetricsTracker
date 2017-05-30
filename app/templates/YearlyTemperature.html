@@ -1,0 +1,27 @@
+<div>
+	<h1>{{year.year}}</h1>
+	<br />
+	<form name="yearForm">
+		<fieldset>
+			<label for="year">Year: </label>
+			<input id="year" type="number" required ng-model="year.year" placeholder="Year..." ng-disabled="existing"></input>
+			<br />
+			<div ng-repeat="month in year.monthRanges">
+				<h2>{{monthNames[month.month]}}</h2>
+				<label>
+					Minimum acceptable temperature(F):
+					<input type="number" required ng-model="month.minViableTemp"></input>
+				</label>
+				<br />
+				<label>
+					Maximum acceptable temperature(F):
+					<input type="number" required ng-model="month.maxViableTemp"></input>
+				</label>
+			</div>
+		</fieldset>
+	</form>
+	<br />
+	<button class="btn btn-default" ng-click="saveYear(year, yearForm)">Save</button>
+	<button class="btn btn-default" ng-click="backToList()">Cancel</button>
+	<button class="btn btn-default" ng-click="deleteYear(year)" ng-show="existing">Delete</button>
+</div>

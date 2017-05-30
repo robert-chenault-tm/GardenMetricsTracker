@@ -1,0 +1,10 @@
+<div>
+<h1 ng-show="noYears">No yearly temperature data to display</h1>
+	<ul>
+		<li ng-repeat="year in years | orderBy: 'year'">
+			<a ng-href="/yearlyTemperature/{{year.year}}" tabindex="-1">{{year.year}}</a>
+		</li>
+	</ul>
+	<button class="btn btn-default" ng-click="back()">Back</button>
+	<button class="btn btn-default" ng-click="addYear()">New</button>
+</div>

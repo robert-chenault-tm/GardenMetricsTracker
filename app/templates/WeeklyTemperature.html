@@ -1,0 +1,19 @@
+<div>
+	<h1>{{title}}</h1>
+	<br />
+	<form name="weekForm">
+		<fieldset>
+			<label for="minTemp">Minimum Air Temperature Recorded: </label>
+			<input id="minTemp" type="number" required ng-model="week.minTemp" placeholder="Minimum Air Temperature Recorded..."></input>
+			<br />
+			<label for="maxTemp">Maximum Air Temperature Recorded: </label>
+			<input id="maxTemp" type="number" required ng-model="week.maxTemp" placeholder="Maximum Air Temperature Recorded..."></input>
+			<br />
+			<label for="avgTemp">Average Air Temperature This Week: </label>
+			<input id="avgTemp" type="number" required ng-model="week.avgTemp" placeholder="Average Air Temperature This Week..."></input>
+		</fieldset>
+	</form>
+	<button class="btn btn-default" ng-click="saveWeek(week, weekForm)" tabindex="-1">Save</button>
+	<button class="btn btn-default" ng-click="backToList()" tabindex="-1">Cancel</button>
+	<button class="btn btn-default" ng-click="deleteWeek(week)" ng-show="removable" tabindex="-1">Delete</button>
+</div>

@@ -1,0 +1,14 @@
+<div>
+<h1 ng-show="noWeeks">No weekly temperature data to display</h1>
+	<ul>
+		<li ng-repeat="week in weeks | orderBy: 'week'">
+			<a ng-href="/weeklyTemperature/{{week.weekFormatted}}" tabindex="-1">{{generateTitle(week)}}</a>
+		</li>
+	</ul>
+	<input type="date" ng-model="newDate"></input>
+	<button class="btn btn-default" ng-click="addWeek()">Add</button>
+	<br />
+	<button class="btn btn-default" ng-click="addCurrentWeek()">Add current week</button>
+	<br />
+	<button class="btn btn-default" ng-click="back()">Back</button>
+</div>
